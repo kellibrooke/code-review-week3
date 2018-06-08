@@ -47,30 +47,30 @@ function replaceZeros(numberSplit){
   return numberSplit;
 }
 
-function masterFunction(userInput){
+function masterFunction2(userInput){
   var splitNumber = userInput.split("");
   var divisibleTest = divisibleBy3(userInput);
   var onesTest = findOnes(splitNumber);
   var zerosTest = findZeros(userInput);
 
   if(divisibleTest === true){
-    $("#result-box").text("I'm sorry, Dave. I'm afraid I can't do that.");
+    $("#result-box2").text("I'm sorry, Dave. I'm afraid I can't do that.");
   } else if(onesTest === true){
     var onesDone = replaceOnes(splitNumber);
     var onesDoneJoined = onesDone.join(" ");
     if(zerosTest === true){
       var onesZerosDone = replaceZeros(onesDone);
       var onesZerosDoneJoined = onesZerosDone.join(" ");
-      $("#result-box").text(onesZerosDoneJoined);
+      $("#result-box2").text(onesZerosDoneJoined);
     } else{
-      $("#result-box").text(onesDoneJoined);
+      $("#result-box2").text(onesDoneJoined);
     }
   } else if(zerosTest === true){
     var zerosDone = replaceZeros(splitNumber);
     var zerosDoneJoined = zerosDone.join(" ");
-    $("#result-box").text(zerosDoneJoined);
+    $("#result-box2").text(zerosDoneJoined);
   } else{
-    $("#result-box").text(userInput);
+    $("#result-box2").text(userInput);
   }
 
 
@@ -80,11 +80,11 @@ function masterFunction(userInput){
 
 // USER INPUT LOGIC
 $(function(){
-  $("#submit-button").click(function(){
+  $("#submit-button2").click(function(){
     event.preventDefault();
-    var uiInput = $("#ui-input").val();
-    masterFunction(uiInput);
-    document.getElementById("the-form").reset();
+    var uiInput = $("#ui-input2").val();
+    masterFunction2(uiInput);
+    document.getElementById("the-form2").reset();
   });
 
 
