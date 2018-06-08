@@ -21,9 +21,13 @@ Also a user should be able to enter a new number and see new results over and ov
 Break the program down into simple, individual behaviors with input/output examples. Begin with the simplest possible behavior. List these behaviors (also known as "specs" or "specifications") in the project's README.md file.
 
 ### Specifications
+* **Test whether that number is an integer.**
+  * If so:
+    * _Inform the user they cannot convert the number they've entered._
+    * If not:
 * **Test whether a number is divisible by 3.**
   * If so:
-    * _Inform the user they cannot convert the number they've entered._ 
+    * _Inform the user they cannot convert the number they've entered._
   * If not:
     * **Test whether a number contains any ones.**
       * If so:
@@ -34,7 +38,12 @@ Break the program down into simple, individual behaviors with input/output examp
       * If so:
         * Replace number with "boop" in HTML.
       * If not:
-        * _Display original number inputted by user_
+        * _Display original number_
+    * **Collect a number from the user.**
+
+    * **Test each condition for each number counting up to the number inputted by the user.**
+    * **Add the result of these tests to an array**
+    * **Display results of the array to the user**
 
 
 ## Setup/Installation Requirements

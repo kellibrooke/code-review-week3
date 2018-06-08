@@ -47,60 +47,6 @@ function replaceZeros(numberSplit){
   return numberSplit;
 }
 
-function masterFunction1(userInput, nameOfUser){
-  var splitNumber = userInput.split("");
-  var parsedNumber = parseInt(userInput);
-  var divisibleTest = divisibleBy3(userInput);
-  var onesTest = findOnes(splitNumber);
-  var zerosTest = findZeros(userInput);
-
-  if(Number.isInteger(parsedNumber) === false){
-    $("#result-box").text("You have submitted an invalid entry, " + nameOfUser + ". Please check to make sure you have entered a number in the box.");
-  } else if(divisibleTest === true){
-    $("#result-box").text("I'm sorry, " + nameOfUser + ". I'm afraid I can't do that.");
-  } else if(onesTest === true){
-    $("#result-box").text("boop");
-  } else if(zerosTest === true){
-    $("#result-box").text("beep");
-  } else{
-    $("#result-box").text(userInput);
-  }
-  document.getElementById("the-form").reset();
-  $("#result-box").slideDown("slow");
-};
-
-function masterFunction2(userInput, nameOfUser){
-  var splitNumber = userInput.split("");
-  var parsedNumber = parseInt(userInput);
-  var divisibleTest = divisibleBy3(userInput);
-  var onesTest = findOnes(splitNumber);
-  var zerosTest = findZeros(userInput);
-
-  if(Number.isInteger(parsedNumber) === false){
-    $("#result-box2").text("You have submitted an invalid entry, " + nameOfUser + ". Please check to make sure you have entered a number in the box.");
-  } else if(divisibleTest === true){
-    $("#result-box2").text("I'm sorry, " + nameOfUser + ". I'm afraid I can't do that.");
-  } else if(onesTest === true){
-    var onesDone = replaceOnes(splitNumber);
-    var onesDoneJoined = onesDone.join(" ");
-    if(zerosTest === true){
-      var onesZerosDone = replaceZeros(onesDone);
-      var onesZerosDoneJoined = onesZerosDone.join(" ");
-      $("#result-box2").text(onesZerosDoneJoined);
-    } else{
-      $("#result-box2").text(onesDoneJoined);
-    }
-  } else if(zerosTest === true){
-    var zerosDone = replaceZeros(splitNumber);
-    var zerosDoneJoined = zerosDone.join(" ");
-    $("#result-box2").text(zerosDoneJoined);
-  } else{
-    $("#result-box2").text(userInput);
-  }
-  document.getElementById("the-form2").reset();
-  $("#result-box2").slideDown("slow");
-};
-
 function produceCountingArray(userInputCount, nameOfUserCount){
   var countTo = parseInt(userInputCount);
   var splitNumber = userInputCount.split("");
@@ -108,9 +54,9 @@ function produceCountingArray(userInputCount, nameOfUserCount){
   var newArray = [];
 
   if(Number.isInteger(countTo) === false){
-    $("#result-box3").text("You have submitted an invalid entry, " + nameOfUserCount + ". Please check to make sure you have entered a number in the box.");
+    $("#result-box").text("You have submitted an invalid entry, " + nameOfUserCount + ". Please check to make sure you have entered a number in the box.");
   } else if(divisibleTest === true){
-    $("#result-box3").text("I'm sorry, " + nameOfUserCount + ". I'm afraid I can't do that.");
+    $("#result-box").text("I'm sorry, " + nameOfUserCount + ". I'm afraid I can't do that.");
   } else{
     for(x=0; x<=countTo; x++){
       var xString = x.toString();
@@ -122,11 +68,67 @@ function produceCountingArray(userInputCount, nameOfUserCount){
         newArray.push(x);
       }
     }
-  $("#result-box3").text(newArray);
+  $("#result-box").text(newArray);
+  }
+  document.getElementById("the-form").reset();
+  $("#result-box").slideDown("slow");
+};
+
+function masterFunction1(userInput, nameOfUser){
+  var splitNumber = userInput.split("");
+  var parsedNumber = parseInt(userInput);
+  var divisibleTest = divisibleBy3(userInput);
+  var onesTest = findOnes(splitNumber);
+  var zerosTest = findZeros(userInput);
+
+  if(Number.isInteger(parsedNumber) === false){
+    $("#result-box2").text("You have submitted an invalid entry, " + nameOfUser + ". Please check to make sure you have entered a number in the box.");
+  } else if(divisibleTest === true){
+    $("#result-box2").text("I'm sorry, " + nameOfUser + ". I'm afraid I can't do that.");
+  } else if(onesTest === true){
+    $("#result-box2").text("boop");
+  } else if(zerosTest === true){
+    $("#result-box2").text("beep");
+  } else{
+    $("#result-box2").text(userInput);
+  }
+  document.getElementById("the-form2").reset();
+  $("#result-box2").slideDown("slow");
+};
+
+function masterFunction2(userInput, nameOfUser){
+  var splitNumber = userInput.split("");
+  var parsedNumber = parseInt(userInput);
+  var divisibleTest = divisibleBy3(userInput);
+  var onesTest = findOnes(splitNumber);
+  var zerosTest = findZeros(userInput);
+
+  if(Number.isInteger(parsedNumber) === false){
+    $("#result-box3").text("You have submitted an invalid entry, " + nameOfUser + ". Please check to make sure you have entered a number in the box.");
+  } else if(divisibleTest === true){
+    $("#result-box3").text("I'm sorry, " + nameOfUser + ". I'm afraid I can't do that.");
+  } else if(onesTest === true){
+    var onesDone = replaceOnes(splitNumber);
+    var onesDoneJoined = onesDone.join(" ");
+    if(zerosTest === true){
+      var onesZerosDone = replaceZeros(onesDone);
+      var onesZerosDoneJoined = onesZerosDone.join(" ");
+      $("#result-box3").text(onesZerosDoneJoined);
+    } else{
+      $("#result-box3").text(onesDoneJoined);
+    }
+  } else if(zerosTest === true){
+    var zerosDone = replaceZeros(splitNumber);
+    var zerosDoneJoined = zerosDone.join(" ");
+    $("#result-box3").text(zerosDoneJoined);
+  } else{
+    $("#result-box3").text(userInput);
   }
   document.getElementById("the-form3").reset();
   $("#result-box3").slideDown("slow");
 };
+
+
 
 // USER INPUT LOGIC
 $(function(){
@@ -137,21 +139,23 @@ $(function(){
     event.preventDefault();
     $("#result-box").hide();
     var uiInput = $("#ui-input").val();
-    masterFunction1(uiInput, userName);
+    produceCountingArray(uiInput, userName)
   });
 
   $("#submit-button2").click(function(){
     event.preventDefault();
     $("#result-box2").hide();
     var uiInput = $("#ui-input2").val();
-    masterFunction2(uiInput, userName);
+    masterFunction1(uiInput, userName);
   });
 
   $("#submit-button3").click(function(){
     event.preventDefault();
     $("#result-box3").hide();
     var uiInput = $("#ui-input3").val();
-    produceCountingArray(uiInput, userName)
+    masterFunction2(uiInput, userName);
   });
+
+
 
 });
