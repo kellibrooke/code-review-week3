@@ -22,25 +22,24 @@ Break the program down into simple, individual behaviors with input/output examp
 
 ### Specifications
 * **Test whether that number is an integer.**
-  * If so:
+  * If not:
     * _Inform the user they cannot convert the number they've entered._
-    * If not:
+    * If so:
 * **Test whether a number is divisible by 3.**
   * If so:
     * _Inform the user they cannot convert the number they've entered._
   * If not:
     * **Test whether a number contains any ones.**
       * If so:
-        * _Replace number with "boop" in HTML._
+        * _Replace number with "boop"._
 
       * If not...
     * **Test whether a number contains any zeros.**
       * If so:
-        * Replace number with "boop" in HTML.
+        * _Replace number with "boop"._
       * If not:
         * _Display original number_
     * **Collect a number from the user.**
-
     * **Test each condition for each number counting up to the number inputted by the user.**
     * **Add the result of these tests to an array**
     * **Display results of the array to the user**
