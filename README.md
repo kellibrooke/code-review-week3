@@ -21,23 +21,20 @@ Also a user should be able to enter a new number and see new results over and ov
 Break the program down into simple, individual behaviors with input/output examples. Begin with the simplest possible behavior. List these behaviors (also known as "specs" or "specifications") in the project's README.md file.
 
 ### Specifications
-* Test whether a number is divisible by 3. If so, inform the user they cannot convert the number they've entered. If not:
-* Test whether a number contains any ones.
+* **Test whether a number is divisible by 3.**
   * If so:
-    1. Split number into an array.
-    2. Find position(s) of one(s) in array.
-    3. Replace ones with "boop".
-    4. Test whether a number contains any zeros.
-    5. Find position(s) of zero(s) in array.
-    6. Replace zeros with "beep".
-    7. Take results from replacement process and convert back into a string separated by spaces.
-    8. Send results to result area of HTML page to display to user.
+    * _Inform the user they cannot convert the number they've entered._ 
   * If not:
-    1. Test whether a number contains any zeros.
-    2. Find position(s) of zero(s) in array.
-    3. Replace zeros with "beep".
-    4. Take results from replacement process and convert back into a string separated by spaces.
-    5. Send results to result area of HTML page to display to user.
+    * **Test whether a number contains any ones.**
+      * If so:
+        * _Replace number with "boop" in HTML._
+
+      * If not...
+    * **Test whether a number contains any zeros.**
+      * If so:
+        * Replace number with "boop" in HTML.
+      * If not:
+        * _Display original number inputted by user_
 
 
 ## Setup/Installation Requirements
