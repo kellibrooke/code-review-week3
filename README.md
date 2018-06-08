@@ -10,7 +10,9 @@ _The instructions for this project are as follows:_
 
 ####
 
-
+* Test whether a number is divisible by 3.
+* Test whether a number contains any ones.
+* Test whether a number contains any zeros.
 
 ####
 
