@@ -105,35 +105,41 @@ function produceCountingArray(userInputCount, nameOfUserCount){
   var countTo = parseInt(userInputCount);
   var splitNumber = userInputCount.split("");
   var divisibleTest = divisibleBy3(countTo);
-  var onesTest = findOnes(splitNumber);
   var newArray = [];
 
   if(Number.isInteger(countTo) === false){
-    $("#result-box2").text("You have submitted an invalid entry, " + nameOfUser + ". Please check to make sure you have entered a number in the box.");
+    $("#result-box3").text("You have submitted an invalid entry, " + nameOfUserCount + ". Please check to make sure you have entered a number in the box.");
   } else if(divisibleTest === true){
-    $("#result-box").text("I'm sorry, " + nameOfUser + ". I'm afraid I can't do that.");
+    $("#result-box3").text("I'm sorry, " + nameOfUserCount + ". I'm afraid I can't do that.");
   } else{
     for(x=0; x<=countTo; x++){
-      if(onesTest === true){
-        newArray.push(splitNumber[x]);
+      var xString = x.toString();
+      if(findOnes(xString) === true){
+        newArray.push("boop");
+      } else if(findZeros(xString) === true){
+        newArray.push("beep");
       } else{
-      newArray.push(x);
+        newArray.push(x);
+      }
     }
+  $("#result-box3").text(newArray);
   }
-
-}
+  document.getElementById("the-form3").reset();
+  $("#result-box3").slideDown("slow");
 };
 
 // USER INPUT LOGIC
 $(function(){
+
   var userName = prompt("Please enter your name");
+
   $("#submit-button").click(function(){
     event.preventDefault();
     $("#result-box").hide();
     var uiInput = $("#ui-input").val();
     masterFunction1(uiInput, userName);
-
   });
+
   $("#submit-button2").click(function(){
     event.preventDefault();
     $("#result-box2").hide();
@@ -141,6 +147,11 @@ $(function(){
     masterFunction2(uiInput, userName);
   });
 
-
+  $("#submit-button3").click(function(){
+    event.preventDefault();
+    $("#result-box3").hide();
+    var uiInput = $("#ui-input3").val();
+    produceCountingArray(uiInput, userName)
+  });
 
 });
