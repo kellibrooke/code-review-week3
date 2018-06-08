@@ -1,4 +1,4 @@
-# Code Review - "Track Suggester" - Week 3 - Intro To Programming - Epicodus - Portland, OR
+# Code Review - "Beep Boop" - Week 3 - Intro To Programming - Epicodus - Portland, OR
 
 #### _This is a final project for the third week of the Intro to Programming course at Epicodus in Portland, June 4 - June 8, 2018_
 
@@ -8,8 +8,19 @@
 
 _The instructions for this project are as follows:_
 
+Create a web application that takes a number from a user and returns a range of numbers from 0 to the chosen number with the following exceptions:
 
+* Numbers that contain a 0 are replaced (all digits) with "Beep!"
+* Numbers that contain a 1 are replaced (all digits) with "Boop!"
+* Numbers divisible by 3 are replaced with "I'm sorry, Dave. I'm afraid I can't do that."
 
+These exceptions are written from least to most important. The first exception should apply unless the second exception does, and the same with the second and third. So, for example, in your finished program the number 10 should be replaced with "Boop!", and the number 30 should be replaced with "I'm sorry, Dave. I'm afraid I can't do that."
+
+Also a user should be able to enter a new number and see new results over and over again.
+
+Break the program down into simple, individual behaviors with input/output examples. Begin with the simplest possible behavior. List these behaviors (also known as "specs" or "specifications") in the project's README.md file.
+
+### Specifications
 * Test whether a number is divisible by 3. If so, inform the user they cannot convert the number they've entered. If not:
 * Test whether a number contains any ones.
   * If so:
