@@ -1,0 +1,9 @@
+body{
+  margin-top: 20px;
+}
+
+.result-area{
+  display:none;
+  background-color:lightblue;
+  height:100px;
+}

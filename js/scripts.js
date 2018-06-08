@@ -47,6 +47,24 @@ function replaceZeros(numberSplit){
   return numberSplit;
 }
 
+function masterFunction1(userInput){
+  var splitNumber = userInput.split("");
+  var divisibleTest = divisibleBy3(userInput);
+  var onesTest = findOnes(splitNumber);
+  var zerosTest = findZeros(userInput);
+
+  if(divisibleTest === true){
+    $("#result-box").text("I'm sorry, Dave. I'm afraid I can't do that.");
+  } else if(onesTest === true){
+    $("#result-box").text("boop");
+  } else if(zerosTest === true){
+    $("#result-box").text("beep");
+  } else{
+    $("#result-box").text(userInput);
+  }
+  $("#result-box").slideDown();
+};
+
 function masterFunction2(userInput){
   var splitNumber = userInput.split("");
   var divisibleTest = divisibleBy3(userInput);
@@ -72,14 +90,20 @@ function masterFunction2(userInput){
   } else{
     $("#result-box2").text(userInput);
   }
-
-
 };
 
 
 
 // USER INPUT LOGIC
 $(function(){
+  $("#submit-button").click(function(){
+    event.preventDefault();
+    $("#result-box").hide();
+    var uiInput = $("#ui-input").val();
+    masterFunction1(uiInput);
+    document.getElementById("the-form").reset();
+
+  });
   $("#submit-button2").click(function(){
     event.preventDefault();
     var uiInput = $("#ui-input2").val();
