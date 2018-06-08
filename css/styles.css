@@ -2,8 +2,34 @@ body{
   margin-top: 20px;
 }
 
+h1{
+  text-align: center;
+  text-shadow: lightblue 2px 2px 2px;
+  font-family:monospace;
+}
+
+form{
+  margin: 50px 200px;
+  background-color: lightblue;
+  padding: 10px;
+  border-radius: 4px;
+  border: white dotted 2px;
+}
+
+.container{
+  background-color: lightyellow;
+  border: black dotted 2px;
+}
+
 .result-area{
   display:none;
-  background-color:lightblue;
+  background-color:white;
   height:100px;
+  border-radius: 4px;
+  border: black dotted 2px;
+  margin:-30px 200px;
+  padding:30px;
+  font-size:20px;
+  font-weight: bold;
+  text-align: center;
 }
