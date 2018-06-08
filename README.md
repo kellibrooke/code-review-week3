@@ -8,20 +8,25 @@
 
 _The instructions for this project are as follows:_
 
-####
 
-* Test whether a number is divisible by 3.
+
+* Test whether a number is divisible by 3. If so, inform the user they cannot convert the number they've entered. If not:
 * Test whether a number contains any ones.
-* Test whether a number contains any zeros.
-* Split number into an array.
-* Find position(s) of one(s) in array.
-* Replace ones in each array with "boop".
-
-
-####
-
-
-
+  * If so:
+    1. Split number into an array.
+    2. Find position(s) of one(s) in array.
+    3. Replace ones with "boop".
+    4. Test whether a number contains any zeros.
+    5. Find position(s) of zero(s) in array.
+    6. Replace zeros with "beep".
+    7. Take results from replacement process and convert back into a string separated by spaces.
+    8. Send results to result area of HTML page to display to user.
+  * If not:
+    1. Test whether a number contains any zeros.
+    2. Find position(s) of zero(s) in array.
+    3. Replace zeros with "beep".
+    4. Take results from replacement process and convert back into a string separated by spaces.
+    5. Send results to result area of HTML page to display to user.
 
 
 ## Setup/Installation Requirements
