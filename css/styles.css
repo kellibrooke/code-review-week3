@@ -2,10 +2,14 @@ body{
   margin-top: 20px;
 }
 
-h1{
+h1, h2{
   text-align: center;
   text-shadow: lightblue 2px 2px 2px;
   font-family:monospace;
+}
+
+h1{
+  border:black 1px dotted;
 }
 
 form{
