@@ -47,7 +47,7 @@ function replaceZeros(numberSplit){
   return numberSplit;
 }
 
-function masterFunction1(userInput){
+function masterFunction1(userInput, nameOfUser){
   var splitNumber = userInput.split("");
   var parsedNumber = parseInt(userInput);
   var divisibleTest = divisibleBy3(userInput);
@@ -57,7 +57,7 @@ function masterFunction1(userInput){
   if(userInput === "" || Number.isInteger(parsedNumber) === false){
     $("#result-box").text("You have entered an invalid selection. Please check to make sure you have entered a number in the box.");
   } else if(divisibleTest === true){
-    $("#result-box").text("I'm sorry, Dave. I'm afraid I can't do that.");
+    $("#result-box").text("I'm sorry, " + nameOfUser + ". I'm afraid I can't do that.");
   } else if(onesTest === true){
     $("#result-box").text("boop");
   } else if(zerosTest === true){
@@ -69,7 +69,7 @@ function masterFunction1(userInput){
   $("#result-box").slideDown("slow");
 };
 
-function masterFunction2(userInput){
+function masterFunction2(userInput, nameOfUser){
   var splitNumber = userInput.split("");
   var parsedNumber = parseInt(userInput);
   var divisibleTest = divisibleBy3(userInput);
@@ -80,7 +80,7 @@ function masterFunction2(userInput){
   if(userInput === "" || Number.isInteger(parsedNumber) === false){
     $("#result-box2").text("You have entered an invalid selection. Please check to make sure you have entered a number in the box.");
   } else if(divisibleTest === true){
-    $("#result-box2").text("I'm sorry, Dave. I'm afraid I can't do that.");
+    $("#result-box2").text("I'm sorry, " + nameOfUser + ". I'm afraid I can't do that.");
   } else if(onesTest === true){
     var onesDone = replaceOnes(splitNumber);
     var onesDoneJoined = onesDone.join(" ");
@@ -106,18 +106,20 @@ function masterFunction2(userInput){
 
 // USER INPUT LOGIC
 $(function(){
+  var userName = prompt("Please enter your name");
+  console.log(userName);
   $("#submit-button").click(function(){
     event.preventDefault();
     $("#result-box").hide();
     var uiInput = $("#ui-input").val();
-    masterFunction1(uiInput);
+    masterFunction1(uiInput, userName);
 
   });
   $("#submit-button2").click(function(){
     event.preventDefault();
     $("#result-box2").hide();
     var uiInput = $("#ui-input2").val();
-    masterFunction2(uiInput);
+    masterFunction2(uiInput, userName);
   });
 
 
