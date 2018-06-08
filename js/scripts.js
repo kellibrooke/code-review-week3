@@ -54,8 +54,8 @@ function masterFunction1(userInput, nameOfUser){
   var onesTest = findOnes(splitNumber);
   var zerosTest = findZeros(userInput);
 
-  if(userInput === "" || Number.isInteger(parsedNumber) === false){
-    $("#result-box").text("You have entered an invalid selection. Please check to make sure you have entered a number in the box.");
+  if(Number.isInteger(parsedNumber) === false){
+    $("#result-box").text("You have submitted an invalid entry, " + nameOfUser + ". Please check to make sure you have entered a number in the box.");
   } else if(divisibleTest === true){
     $("#result-box").text("I'm sorry, " + nameOfUser + ". I'm afraid I can't do that.");
   } else if(onesTest === true){
@@ -75,10 +75,9 @@ function masterFunction2(userInput, nameOfUser){
   var divisibleTest = divisibleBy3(userInput);
   var onesTest = findOnes(splitNumber);
   var zerosTest = findZeros(userInput);
-  console.log(parsedNumber);
 
-  if(userInput === "" || Number.isInteger(parsedNumber) === false){
-    $("#result-box2").text("You have entered an invalid selection. Please check to make sure you have entered a number in the box.");
+  if(Number.isInteger(parsedNumber) === false){
+    $("#result-box2").text("You have submitted an invalid entry, " + nameOfUser + ". Please check to make sure you have entered a number in the box.");
   } else if(divisibleTest === true){
     $("#result-box2").text("I'm sorry, " + nameOfUser + ". I'm afraid I can't do that.");
   } else if(onesTest === true){
@@ -102,12 +101,32 @@ function masterFunction2(userInput, nameOfUser){
   $("#result-box2").slideDown("slow");
 };
 
+function produceCountingArray(userInputCount, nameOfUserCount){
+  var countTo = parseInt(userInputCount);
+  var splitNumber = userInputCount.split("");
+  var divisibleTest = divisibleBy3(countTo);
+  var onesTest = findOnes(splitNumber);
+  var newArray = [];
 
+  if(Number.isInteger(countTo) === false){
+    $("#result-box2").text("You have submitted an invalid entry, " + nameOfUser + ". Please check to make sure you have entered a number in the box.");
+  } else if(divisibleTest === true){
+    $("#result-box").text("I'm sorry, " + nameOfUser + ". I'm afraid I can't do that.");
+  } else{
+    for(x=0; x<=countTo; x++){
+      if(onesTest === true){
+        newArray.push(splitNumber[x]);
+      } else{
+      newArray.push(x);
+    }
+  }
+
+}
+};
 
 // USER INPUT LOGIC
 $(function(){
   var userName = prompt("Please enter your name");
-  console.log(userName);
   $("#submit-button").click(function(){
     event.preventDefault();
     $("#result-box").hide();

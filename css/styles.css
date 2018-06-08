@@ -19,6 +19,7 @@ form{
 .container{
   background-color: lightyellow;
   border: black dotted 2px;
+  padding-bottom:80px;
 }
 
 .result-area{
