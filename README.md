@@ -44,6 +44,8 @@ Break the program down into simple, individual behaviors with input/output examp
     * **Add the result of these tests to an array**
     * **Display results of the array to the user**
 
+### Known Bugs/Issues
+* Output boxes will allow text to flow outside of the output box when it is wider than the box instead of wrapping within the box.
 
 ## Setup/Installation Requirements
 
