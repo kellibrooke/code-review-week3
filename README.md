@@ -46,6 +46,7 @@ Break the program down into simple, individual behaviors with input/output examp
 
 ### Known Bugs/Issues
 * Output boxes will allow text to flow outside of the output box when it is wider than the box instead of wrapping within the box.
+* Prompt box does not pop up automatically when you click on the link to the live site; user must refresh page.
 
 ## Setup/Installation Requirements
 
