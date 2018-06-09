@@ -47,7 +47,6 @@ Break the program down into simple, individual behaviors with input/output examp
 ### Known Bugs/Issues
 * Output boxes will allow text to flow outside of the output box when it is wider than the box instead of wrapping within the box.
 * Prompt box does not pop up automatically when you click on the link to the live site; user must refresh page.
-* Zero bug still shows up in link to live site, even though I fixed it in my local version and the code appears fully updated in both the master and gh-pages branches.
 
 ## Setup/Installation Requirements
 
