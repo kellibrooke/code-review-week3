@@ -2,7 +2,7 @@
 
 function divisibleBy3(number){
 var parsedNumber = parseInt(number);
-  if(parsedNumber % 3 === 0){
+  if(parsedNumber % 3 === 0 && parsedNumber !== 0){
     return true;
   } else{
     return false;
